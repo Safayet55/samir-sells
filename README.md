@@ -1,2 +1,2 @@
-samir condom,
-play safev,use samir condom
+Samir condoms,
+Play safe,use Samir condom
