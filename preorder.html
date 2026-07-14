@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pre-Order - SAMIR Condoms</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+    body { margin:0; font-family:'Poppins',sans-serif; background:linear-gradient(135deg,#0f0f1e,#1a0033); color:white; }
+    nav { background:rgba(0,0,0,0.8); padding:15px; position:sticky; top:0; }
+    nav a { color:white; margin:0 15px; text-decoration:none; font-weight:600; }
+    .container { max-width:700px; margin:40px auto; padding:20px; }
+    form { background:rgba(0,0,0,0.7); padding:40px; border-radius:20px; }
+    input, select, textarea { width:100%; padding:14px; margin:12px 0; border:none; border-radius:8px; background:#222; color:white; }
+    button { width:100%; padding:18px; background:linear-gradient(90deg,#ffd700,#ffaa00); color:black; font-size:1.4rem; font-weight:700; border:none; border-radius:10px; cursor:pointer; }
+    .success { display:none; background:#00cc66; color:black; padding:30px; border-radius:15px; text-align:center; margin-top:30px; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container" style="display:flex;justify-content:center;">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="preorder.html">Pre-Order Now</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1 style="text-align:center;color:#ffd700;">Pre-Order SAMIR Condoms</h1>
+
+    <form id="preorderForm">
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="tel" id="mobile" placeholder="Mobile Number" required>
+      <input type="text" id="address" placeholder="Full Address" required>
+      <textarea id="address2" placeholder="Additional Address" rows="3"></textarea>
+      
+      <select id="quantity" required>
+        <option value="">Select Quantity</option>
+        <option value="2">2 Packs (1+1 Free)</option>
+        <option value="1">1 Pack</option>
+        <option value="5">5 Packs</option>
+      </select>
+      
+      <select id="edition" required>
+        <option value="">Preferred Edition</option>
+        <option value="Regular">Regular - 19.2 TK</option>
+        <option value="Exclusive">Exclusive - 29.76 TK</option>
+        <option value="VIP">VIP Giveaway</option>
+      </select>
+      
+      <button type="submit">Submit Pre-Order</button>
+    </form>
+
+    <div id="successMessage" class="success">
+      <h2>🎉 Pre-Order Confirmed!</h2>
+      <p>Thank you! Redirecting to confirmation video...</p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('preorderForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      document.getElementById('preorderForm').style.display = 'none';
+      const success = document.getElementById('successMessage');
+      success.style.display = 'block';
+
+      // Redirect to video page after 3 seconds
+      setTimeout(() => {
+        window.location.href = "thankyou.html";
+      }, 3000);
+    });
+  </script>
+</body>
+</html>
